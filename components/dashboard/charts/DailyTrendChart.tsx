@@ -40,7 +40,7 @@ export default function DailyTrendChart({ dailyData }: DailyTrendChartProps) {
           <CardTitle className="text-base font-medium">Daily Spending Trend</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="h-[300px] flex items-center justify-center">
+          <div className="h-75 flex items-center justify-center">
             <p className="text-sm text-muted-foreground">No transactions recorded yet</p>
           </div>
         </CardContent>
@@ -54,7 +54,7 @@ export default function DailyTrendChart({ dailyData }: DailyTrendChartProps) {
         <CardTitle className="text-base font-medium">Daily Spending Trend</CardTitle>
       </CardHeader>
       <CardContent>
-        <div className="h-[300px]">
+        <div className="h-75">
           <ResponsiveContainer width="100%" height="100%">
             <AreaChart
               data={dailyData}
