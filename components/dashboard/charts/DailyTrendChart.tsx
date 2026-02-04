@@ -91,8 +91,8 @@ export default function DailyTrendChart({ dailyData }: DailyTrendChartProps) {
                   border: '1px solid hsl(var(--border))',
                   borderRadius: '8px',
                 }}
-                formatter={(value: number, name: string) => [
-                  formatAmount(value),
+                formatter={(value, name) => [
+                  formatAmount(value as number),
                   name === 'income' ? 'Income' : 'Expenses'
                 ]}
                 labelFormatter={(label) => `Day ${label}`}
