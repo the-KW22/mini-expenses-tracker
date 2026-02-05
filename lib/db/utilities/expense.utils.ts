@@ -51,10 +51,10 @@ export async function getExpensesByMonth(
         ? new mongoose.Types.ObjectId(userId) 
         : userId;
 
-        // Parse month string to get start and end dates
+        // Parse month string to get start and end dates (use UTC to avoid timezone issues)
         const [year, monthNum] = month.split('-');
-        const startDate = new Date(parseInt(year), parseInt(monthNum) - 1, 1);
-        const endDate = new Date(parseInt(year), parseInt(monthNum), 0, 23, 59, 59, 999);
+        const startDate = new Date(Date.UTC(parseInt(year), parseInt(monthNum) - 1, 1));
+        const endDate = new Date(Date.UTC(parseInt(year), parseInt(monthNum), 0, 23, 59, 59, 999));
 
         return await Expense.find({
         userId: userObjectId,
@@ -206,10 +206,10 @@ export async function getExpensesByCategory(
       ? new mongoose.Types.ObjectId(userId) 
       : userId;
 
-    // Parse month
+    // Parse month (use UTC to avoid timezone issues)
     const [year, monthNum] = month.split('-');
-    const startDate = new Date(parseInt(year), parseInt(monthNum) - 1, 1);
-    const endDate = new Date(parseInt(year), parseInt(monthNum), 0, 23, 59, 59, 999);
+    const startDate = new Date(Date.UTC(parseInt(year), parseInt(monthNum) - 1, 1));
+    const endDate = new Date(Date.UTC(parseInt(year), parseInt(monthNum), 0, 23, 59, 59, 999));
 
     const result = await Expense.aggregate([
       // Stage 1: Filter by user and date
@@ -279,10 +279,10 @@ export async function getTotalExpensesForCategory(
       ? new mongoose.Types.ObjectId(categoryId) 
       : categoryId;
 
-    // Parse month
+    // Parse month (use UTC to avoid timezone issues)
     const [year, monthNum] = month.split('-');
-    const startDate = new Date(parseInt(year), parseInt(monthNum) - 1, 1);
-    const endDate = new Date(parseInt(year), parseInt(monthNum), 0, 23, 59, 59, 999);
+    const startDate = new Date(Date.UTC(parseInt(year), parseInt(monthNum) - 1, 1));
+    const endDate = new Date(Date.UTC(parseInt(year), parseInt(monthNum), 0, 23, 59, 59, 999));
 
     const match: {
       userId: mongoose.Types.ObjectId;

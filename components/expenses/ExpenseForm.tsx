@@ -26,6 +26,7 @@ import { toast } from 'sonner';
 import * as LucideIcons from 'lucide-react';
 import { Loader2, CalendarIcon, type LucideIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { toUTCDate } from '@/lib/utils/index';
 
 const IconsMap: Record<string, LucideIcon> = LucideIcons as unknown as Record<string, LucideIcon>;
 import { format } from 'date-fns';
@@ -187,7 +188,7 @@ export default function ExpenseForm({
             <Calendar
               mode="single"
               selected={watchDate}
-              onSelect={(date) => setValue('date', date || new Date())}
+              onSelect={(date) => setValue('date', toUTCDate(date || new Date()))}
               initialFocus
             />
           </PopoverContent>

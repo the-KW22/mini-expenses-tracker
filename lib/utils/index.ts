@@ -147,3 +147,18 @@ export function getInitials(name: string): string {
   }
   return (words[0].charAt(0) + words[words.length - 1].charAt(0)).toUpperCase();
 }
+
+/**
+ * Converts a local date to UTC noon on the same calendar day.
+ * This prevents timezone shifts when storing dates in MongoDB.
+ *
+ * Example: Feb 1, 2026 00:00 local (UTC+8) → Feb 1, 2026 12:00 UTC
+ */
+export function toUTCDate(localDate: Date): Date {
+  return new Date(Date.UTC(
+    localDate.getFullYear(),
+    localDate.getMonth(),
+    localDate.getDate(),
+    12, 0, 0, 0
+  ));
+}

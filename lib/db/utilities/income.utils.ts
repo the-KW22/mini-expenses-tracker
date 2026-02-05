@@ -48,10 +48,10 @@ export async function getIncomesByMonth(
             ? new mongoose.Types.ObjectId(userId)
             : userId;
 
-        // Parse month string to get start and end dates
+        // Parse month string to get start and end dates (use UTC to avoid timezone issues)
         const [year, monthNum] = month.split('-');
-        const startDate = new Date(parseInt(year), parseInt(monthNum) - 1, 1);
-        const endDate = new Date(parseInt(year), parseInt(monthNum), 0, 23, 59, 59, 999);
+        const startDate = new Date(Date.UTC(parseInt(year), parseInt(monthNum) - 1, 1));
+        const endDate = new Date(Date.UTC(parseInt(year), parseInt(monthNum), 0, 23, 59, 59, 999));
 
         return await Income.find({
             userId: userObjectId,
@@ -191,10 +191,10 @@ export async function getTotalIncomeForMonth(
             ? new mongoose.Types.ObjectId(userId)
             : userId;
 
-        // Parse month
+        // Parse month (use UTC to avoid timezone issues)
         const [year, monthNum] = month.split('-');
-        const startDate = new Date(parseInt(year), parseInt(monthNum) - 1, 1);
-        const endDate = new Date(parseInt(year), parseInt(monthNum), 0, 23, 59, 59, 999);
+        const startDate = new Date(Date.UTC(parseInt(year), parseInt(monthNum) - 1, 1));
+        const endDate = new Date(Date.UTC(parseInt(year), parseInt(monthNum), 0, 23, 59, 59, 999));
 
         const result = await Income.aggregate([
             {
@@ -236,10 +236,10 @@ export async function getIncomesBySource(
             ? new mongoose.Types.ObjectId(userId)
             : userId;
 
-        // Parse month
+        // Parse month (use UTC to avoid timezone issues)
         const [year, monthNum] = month.split('-');
-        const startDate = new Date(parseInt(year), parseInt(monthNum) - 1, 1);
-        const endDate = new Date(parseInt(year), parseInt(monthNum), 0, 23, 59, 59, 999);
+        const startDate = new Date(Date.UTC(parseInt(year), parseInt(monthNum) - 1, 1));
+        const endDate = new Date(Date.UTC(parseInt(year), parseInt(monthNum), 0, 23, 59, 59, 999));
 
         const result = await Income.aggregate([
             // Stage 1: Filter by user and date
@@ -308,10 +308,10 @@ export async function getTotalIncomeForSource(
             ? new mongoose.Types.ObjectId(incomeSourceId)
             : incomeSourceId;
 
-        // Parse month
+        // Parse month (use UTC to avoid timezone issues)
         const [year, monthNum] = month.split('-');
-        const startDate = new Date(parseInt(year), parseInt(monthNum) - 1, 1);
-        const endDate = new Date(parseInt(year), parseInt(monthNum), 0, 23, 59, 59, 999);
+        const startDate = new Date(Date.UTC(parseInt(year), parseInt(monthNum) - 1, 1));
+        const endDate = new Date(Date.UTC(parseInt(year), parseInt(monthNum), 0, 23, 59, 59, 999));
 
         const result = await Income.aggregate([
             {
