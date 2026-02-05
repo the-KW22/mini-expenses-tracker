@@ -15,10 +15,10 @@ export function CTA() {
 
           <div className="relative z-10 flex flex-col items-center text-center">
             <h2 className="text-3xl sm:text-4xl font-bold text-primary-foreground mb-4">
-              Ready to Take Control of Your Expenses?
+              Ready to Take Control of Your Finances?
             </h2>
             <p className="text-primary-foreground/90 max-w-xl mb-8 text-lg">
-              Join thousands of users who have simplified their financial tracking. Start your journey to better money management today.
+              Track income, manage expenses, and watch your savings grow. Start your journey to better money management today.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">

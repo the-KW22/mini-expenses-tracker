@@ -19,7 +19,7 @@ export function Hero() {
 
                 {/* Tagline */}
                 <p className="text-lg sm:text-xl text-text-secondary mb-8 max-w-xl">
-                    Simple, intuitive expense tracking to help you stay on budget and take control of your finances.
+                    Track income and expenses, monitor your savings, and take control of your finances with ease.
                 </p>
 
                 {/* CTA Buttons */}

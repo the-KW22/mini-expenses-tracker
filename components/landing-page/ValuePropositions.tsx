@@ -1,4 +1,4 @@
-import { Bell, PenLine, BarChart3 } from "lucide-react";
+import { Bell, ArrowUpDown, TrendingUp } from "lucide-react";
 import {
   Card,
   CardHeader,
@@ -16,18 +16,18 @@ const propositions = [
       "Get notified instantly when your spending approaches your budget limits, helping you make smarter financial decisions before it's too late.",
   },
   {
-    icon: PenLine,
-    title: "Simple Expense Logging",
-    description: "Add, edit, and delete expenses easily.",
+    icon: ArrowUpDown,
+    title: "Track Income & Expenses",
+    description: "Log both earnings and spending in one place.",
     details:
-      "No complicated forms or confusing interfaces. Log your expenses in seconds with our streamlined, user-friendly design.",
+      "Manage income by source and expenses by category. See your complete financial picture with our dual-tracking system.",
   },
   {
-    icon: BarChart3,
-    title: "Clear Spending Overview",
-    description: "See recent transactions and budget progress at a glance.",
+    icon: TrendingUp,
+    title: "Cash Flow Insights",
+    description: "See your savings rate at a glance.",
     details:
-      "Visual progress bars and organized transaction lists give you a complete picture of your financial health without information overload.",
+      "Instantly view your net cash flow (income minus expenses) with visual indicators. Track your savings percentage and make smarter financial decisions.",
   },
 ];
 
@@ -41,7 +41,7 @@ export function ValuePropositions() {
             Why Choose Mini Expenses Tracker?
           </h2>
           <p className="text-text-secondary max-w-2xl mx-auto">
-            Unlike complex spreadsheets or bloated apps, we focus on what matters most: helping you track expenses simply and effectively.
+            Unlike complex spreadsheets or bloated apps, we focus on what matters most: helping you track your money simply and effectively.
           </p>
         </div>
 

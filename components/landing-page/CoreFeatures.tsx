@@ -4,13 +4,15 @@ import {
   BarChart,
   LayoutDashboard,
   Check,
+  Wallet,
+  PieChart,
 } from "lucide-react";
 
 const features = [
   {
     icon: FolderTree,
     title: "Category & Subcategory Tracking",
-    description: "Organize expenses by categories and subcategories for detailed insights into where your money goes.",
+    description: "Organize expenses by categories and subcategories for detailed insights.",
   },
   {
     icon: Gauge,
@@ -18,9 +20,19 @@ const features = [
     description: "Set and manage your monthly spending limits to keep your finances on track.",
   },
   {
+    icon: Wallet,
+    title: "Income Tracking",
+    description: "Track all your income sources with custom categories, icons, and colors.",
+  },
+  {
     icon: BarChart,
     title: "Visual Budget Progress Bars",
     description: "See your spending progress at a glance with intuitive visual indicators.",
+  },
+  {
+    icon: PieChart,
+    title: "Visual Charts & Analytics",
+    description: "Pie charts for category breakdown and trend charts for daily spending patterns.",
   },
   {
     icon: LayoutDashboard,
@@ -39,13 +51,13 @@ export function CoreFeatures() {
             Core Features
           </h2>
           <p className="text-text-secondary max-w-2xl mx-auto">
-            Everything you need to manage your expenses effectively, without the complexity.
+            Everything you need to manage your finances effectively, without the complexity.
           </p>
         </div>
 
         {/* Features Grid */}
-        <div className="max-w-4xl mx-auto">
-          <div className="grid gap-4 sm:grid-cols-2">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((feature) => (
               <div
                 key={feature.title}

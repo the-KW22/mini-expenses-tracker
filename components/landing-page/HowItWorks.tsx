@@ -13,14 +13,14 @@ const steps = [
     icon: Target,
     title: "Set Your Monthly Budget",
     description:
-      "Define your spending limit for the month. You can adjust it anytime as your financial situation changes.",
+      "Set your monthly budget and add income sources. Adjust anytime as your financial situation changes.",
   },
   {
     number: 3,
     icon: TrendingUp,
-    title: "Track and Stay in Control",
+    title: "Track, Analyze & Save",
     description:
-      "Log your expenses, monitor your progress, and receive alerts when you're approaching your budget limit.",
+      "Log income and expenses, view visual charts, and receive alerts when approaching your budget limit.",
   },
 ];
 
